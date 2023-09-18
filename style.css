@@ -1,0 +1,171 @@
+.body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/**======index======*/
+.container {
+    width: 1100px;
+    margin: auto;
+    position: relative;
+    padding: 10px;
+}
+
+.header-right {
+    float: right;
+}
+
+.menu b {
+    color: cornflowerblue;
+}
+
+nav {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    line-height: 60px;
+    position: sticky;
+    position: -webkit-sticky; 
+    top: 0;
+    background: #ffffff;
+    z-index: 1;
+    border-bottom:1px solid #364f6b;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+nav ul li {
+    float: left;
+}
+
+nav ul li a {
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    padding: 0px 16px 0px 16px;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: #364f6b;
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 160px;
+}
+
+.hero-image {
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+/**====home====**/
+.column{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    margin: 80px;
+    align-items: center;
+    grid-gap: 40px;
+}
+.column > article{
+    box-shadow: 0px 0px 5px 0px black;
+    border-radius: 20px;
+    text-align: center;
+    transform: transition;
+}
+.column > article:hover {
+    transform: scale(1.2);
+}
+.more{
+    text-align: center;
+}
+
+.video{
+    position: relative;
+    float: center;
+    width: 1100px;
+}
+.card .video video{
+    width: 450px;
+    height: 100%;
+    object-fit: cover;
+    display: grid;
+}
+.video-materi{
+    max-width: 1100px;
+    width: 100%;
+    position: relative;
+    margin: 55px;
+}
+.video-materi .slide{
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100%/2) - 12px);
+    gap: 20px;
+    overflow: hidden;
+    margin: 18px;
+    scroll-behavior: smooth;
+}
+.slide.dragging .card{
+    cursor: grab;
+    user-select: none;
+}
+.slide .card{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    cursor: pointer;
+    flex-direction: column;
+}
+.video-materi i{
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.video-materi i:first-child{
+    left: -22px;
+}
+.video-materi i:last-child{
+    right: -22px;
+}
+@media (max-width: 900px) {
+    .column{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@media (max-width: 500px) {
+    .column{
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+@media screen and (max-width: 900px) {
+    .video-materi .slide{
+        grid-auto-columns: calc((100%/2) - 9px);
+        gap: 10px;
+    }
+}
+@media screen and (max-width: 500px) {
+    .video-materi .slide{
+        grid-auto-columns: 100%;
+        gap: 5px;
+    }
+}
