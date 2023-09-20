@@ -169,3 +169,43 @@ nav ul li a:hover {
         gap: 5px;
     }
 }
+
+/*===Materi===*/
+.judul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+}
+.judul h1{
+    margin-top: 35px;
+    width: 1000px;
+    padding: 20px;
+    background: gray;
+    border-radius: 20px;
+}
+.judul h2{
+    width: 720px;
+    padding: 160px;
+    background: gray;
+    border-radius: 20px;
+}
+.decision .before{
+    margin-top: 20px;
+    margin-bottom: 35px;
+    float: left;
+    background: gray;
+    padding: 10px;
+    margin-left: 80px;
+    border-radius: 20px;
+}
+.decision .after{
+    margin-top: 20px;
+    margin-bottom: 35px;
+    float: right;
+    background: gray;
+    padding: 10px;
+    margin-right: 80px;
+    border-radius: 20px;
+}
