@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="daftar.css">
+    <title>Daftar</title>
+</head>
+<body>
+    <div class="signup-container">
+        <h1>Daftar</h1>
+        <br><br>
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="nama">Nama Lengkap</label>
+                <input type="text" id="nama" name="nama" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Alamat Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit"><a href="login.html">Daftar</a></button>
+        </form>
+    </div>
+
+    <!-- Pop-up Pesan -->
+    <div class="overlay" id="overlay">
+        <div class="success-popup" id="successPopup">
+            <p>Anda telah berhasil daftar! Klik tombol di bawah ini untuk login.</p>
+            <a href="login.html" class="close-button">Login</a>
+        </div>
+    </div>
+</body>
+</html>
