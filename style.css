@@ -172,7 +172,7 @@ nav ul li a:hover {
 
 /*===Materi===*/
 .judul{
-    display: flex;
+    display: grid;
     align-items: center;
     justify-content: center;
     height: 100%;
@@ -209,3 +209,53 @@ nav ul li a:hover {
     margin-right: 80px;
     border-radius: 20px;
 }
+/*==OUR TEAM==*/
+.row-team {
+    align-items: center;
+    justify-content: center;
+    display: block;
+    width: auto;
+}
+.column-team {
+    float: flex;
+    width: 100%;
+    margin: 16px;
+    padding: 10px;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 300px);    
+  }
+  @media screen and (max-width: 650px) {
+    .column {
+      width: 100%;
+      display: block;
+    }
+  }
+  .card-team {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+  .container-team {
+    padding: 10px;
+  }
+  .container-team::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  .title-team {
+    color: grey;
+  }
+  .button-contact {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+  }
+  .button-contact:hover {
+    background-color: #555;
+  }
