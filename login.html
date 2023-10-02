@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-bg">
+<div class="container-login">
+    <div class="login-form">
+        <h2>Login</h2>
+        <form id="loginForm" onsubmit="loginUser(event)">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <div class="login-popup" id="loginPopup">
+        <div class="login-popup-content">
+            <span class="close" onclick="toggleLoginPopup()">&times;</span>
+            <h2>Login Berhasil</h2>
+            <p>Anda berhasil masuk ke akun Anda</p>
+            <a href="home.html">
+                <button type="button">Lanjutkan</button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

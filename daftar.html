@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Daftar</title>
+</head>
+<body class="dark-bg">
+<div class="container-register">
+    <div class="register-form">
+        <h2>Daftar UMKMQ</h2>
+        <form action="#" onsubmit="registerUser(event)">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+    
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+    
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+    
+            <button type="submit">Daftar</button>
+        </form>
+    </div>
+    <!-- Pop-up Pesan -->
+    <div class="login-popup" id="loginPopup">
+        <div class="login-popup-content">
+            <span class="close" onclick="toggleLoginPopup()">&times;</span>
+            <h2>Akun Berhasil Dibuat</h2>
+            <p>Silakan login dengan akun yang telah dibuat</p>
+            <a href="login.html">
+                <button type="button">Login</button>
+            </a>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
