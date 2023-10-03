@@ -71,3 +71,58 @@ function showMateri(materiNumber) {
     var selectedMateri = document.getElementById('materi' + materiNumber);
     selectedMateri.classList.add('active');
 }
+
+//===SOAL OPEN===//
+const questions = [
+    {
+        question: "Apa itu UMKM?",
+        options: ["Jualan", "Toko", "Kegiatan", "Pasar"],
+        correctAnswer: "Jualan"
+    },
+];
+
+let currentQuestionIndex = 0;
+
+function showQuestion() {
+    const currentQuestion = questions[currentQuestionIndex];
+    document.getElementById("question-text").textContent = currentQuestion.question;
+
+    const answerContainer = document.getElementById("answer-container");
+    answerContainer.innerHTML = "";
+
+    currentQuestion.options.forEach((option, index) => {
+        const input = document.createElement("input");
+        input.type = "radio";
+        input.name = "answer";
+        input.value = option;
+        const label = document.createElement("label");
+        label.appendChild(input);
+        label.appendChild(document.createTextNode(` ${option}`));
+        answerContainer.appendChild(label);
+    });
+}
+
+function nextQuestion() {
+    const selectedAnswer = document.querySelector('input[name="answer"]:checked');
+    if (!selectedAnswer) {
+        alert("Please select an answer!");
+        return;
+    }
+
+    const currentQuestion = questions[currentQuestionIndex];
+    if (selectedAnswer.value === currentQuestion.correctAnswer) {
+        alert("Correct!");
+    } else {
+        alert(`Incorrect. The correct answer is ${currentQuestion.correctAnswer}.`);
+    }
+
+    currentQuestionIndex++;
+    if (currentQuestionIndex < questions.length) {
+        showQuestion();
+    } else {
+        alert("Quiz completed!");
+    }
+}
+
+// Initial question display
+showQuestion();
