@@ -9,18 +9,32 @@ function registerUser(event) {
     toggleLoginPopup();
 }
 
-//=======Login PopUp======//
-function toggleLoginPopup() {
-    var loginPopup = document.getElementById("loginPopup");
-    loginPopup.style.display = (loginPopup.style.display === "none" || loginPopup.style.display === "") ? "flex" : "none";
-}
+//====Status Login====//
+function openLoginPopup() {
+    document.getElementById('loginPopup').style.display = 'block';
+    document.getElementById('overlay').style.display = 'block';
+  }
 
-function loginUser(event) {
-    event.preventDefault(); 
+  function closeLoginPopup() {
+    document.getElementById('loginPopup').style.display = 'none';
+    document.getElementById('overlay').style.display = 'none';
+    document.getElementById('loginMessage').innerText = ''; // Reset login message
+  }
 
-    toggleLoginPopup();
-}
+  function validateLogin() {
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
 
+    var validUsername = 'user1';
+    var validPassword = 'pass123';
+
+    if (username === validUsername && password === validPassword) {
+      document.getElementById('loginMessage').innerText = 'Login berhasil!';
+     
+    } else {
+      document.getElementById('loginMessage').innerText = 'Login gagal. Periksa kembali username dan password Anda.';
+    }
+  }
 //==========home==========//
 //**video**
 const slide = document.querySelector(".slide");

@@ -17,7 +17,7 @@
 }
 
 .button-1 {
-    background-color: blue;
+    background-color: #1746A2;
     color: #ffffff; 
     border-radius: 5px;
     padding: 10px 20px;
@@ -36,7 +36,7 @@
 }
 
 .button-2 {
-    background-color: blue;
+    background-color: #1746A2;
     color: #ffffff; 
     border-radius: 5px;
     padding: 10px 20px;
@@ -189,7 +189,7 @@ nav ul li a:hover {
 }
 
 .register-form button {
-    background-color: blue;
+    background-color: #1746A2;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -217,7 +217,7 @@ nav ul li a:hover {
 .login-popup button {
     padding: 10px 20px;
     font-size: 16px;
-    background-color: blue;
+    background-color: #1746A2;
     color: white;
     border: none;
     border-radius: 5px;
@@ -278,7 +278,7 @@ body.dark-bg {
 }
 
 .login-form button {
-    background-color: blue;
+    background-color: #1746A2;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -455,6 +455,7 @@ body.dark-bg {
         gap: 5px;
     }
 }
+
 /*=Soal Home=*/
 .soal {
     border-radius: 8px;
@@ -494,7 +495,7 @@ p {
 
 }
 .content button {
-    background-color: blue;
+    background-color: #1746A2;
     color: white;
     padding: 5px 10px;
     border: none;
@@ -603,6 +604,48 @@ footer {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.materi-1 {
+    border-radius: 4;
+    display: block;
+    padding: 20px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background-color: #FFF7E9;
+}
+.materi-1 h1 {
+    border-bottom: 2px solid #000;
+    padding-bottom: 5px;
+}
+.materi-2 {
+    border-radius: 4;
+    display: block;
+    padding: 20px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background-color: #FFF7E9;
+}
+.materi-2 h1 {
+    border-bottom: 2px solid #000;
+    padding-bottom: 5px;
+}
+.materi-3 {
+    border-radius: 4;
+    display: block;
+    padding: 20px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background-color: #FFF7E9;
+}
+.materi-3 h1 {
+    border-bottom: 2px solid #000;
+    padding-bottom: 5px;
+}
 h1, h2 {
     color: #333;
 }
@@ -624,7 +667,7 @@ p {
 }
 
 button {
-    background-color: blue;
+    background-color:#1746A2;
     color: #fff;
     padding: 10px;
     border: none;
