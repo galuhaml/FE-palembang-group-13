@@ -65,7 +65,7 @@
     
 /**===daftar===**/
 body.dark-bg {
-    background-color: #FFF7E9;
+    background-color: #FF731D;
 }
 
 .header {
@@ -244,7 +244,7 @@ nav ul li a:hover {
 
 /**===login===**/
 body.dark-bg {
-    background-color: #cfa310;
+    background-color: #FF731D;
 }
 .container-login {
     display: flex;
