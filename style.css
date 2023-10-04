@@ -4,9 +4,73 @@
     justify-content: center;
 }
 /**======index======*/
+.page {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.backdrop {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.button-1 {
+    background-color: blue;
+    color: #ffffff; 
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 20px;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    top: 75%;
+    left: 10%;
+    text-align: center;
+    text-decoration: none;
+    align-items: center;
+}
+
+.button-1:hover {
+    background-color: rgb(81, 81, 255);
+}
+
+.button-2 {
+    background-color: blue;
+    color: #ffffff; 
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 20px;
+    position: absolute;
+    top: 75%;
+    left: 20%;
+    text-align: center;
+    text-decoration: none;
+    align-items: center;
+}
+
+.button-2:hover {
+    background-color: rgb(81, 81, 255);
+}
+
+@media screen and (max-width: 650px) {
+      .backdrop {
+        width: 100%;
+      }
+      .hero-text {
+        width: 100%;
+        display: block;
+      } 
+}
+    
+/**===daftar===**/
+body.dark-bg {
+    background-color: #FFF7E9;
+}
+
 .header {
     width: 100%;
-    background-color: #f19d00;
+    background-color: #FF731D;
     border-radius: 8px;
     padding: 5px;
     align-items: center;
@@ -79,16 +143,6 @@ nav ul li a:hover {
       } 
 }
 
-.page {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin-top: 160px;
-}
-
 .logo {
     display: flex;
     align-items: center;
@@ -99,29 +153,9 @@ nav ul li a:hover {
     height: auto;
     width: 50px;
     background-color: #fff;
-    border-radius: 100px;
-    
-}
-.hero-text button {
-    background-color: blue;
-    color: #ffffff; 
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 18px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin: 10px;
+    border-radius: 100px;  
 }
 
-.hero-text button:hover {
-    background-color: rgb(81, 81, 255);
-}
-
-/**===daftar===**/
-body.dark-bg {
-    background-color: #cfa310;
-}
 .container-register {
     display: flex;
     justify-content: space-between;
@@ -166,6 +200,7 @@ body.dark-bg {
 .register-form button:hover {
     background-color: rgb(81, 81, 255);
 }
+
 /* Pop-up overlay */
 .login-popup {
     display: flex;
@@ -298,11 +333,12 @@ body.dark-bg {
     margin-top: 20px;
     margin-left: 65px;
     width: 1100px;
+    background-color: #FFF7E9;
 }
 
 .row-materi h1 {
     size: 40px;
-    background-color: #f19d00;
+    background-color: #FFF7E9;
     width: auto;
     border-radius: 8px;
     padding: 4px;
@@ -317,22 +353,21 @@ body.dark-bg {
     grid-gap: 30px;
     justify-content: center;
     text-align: center;
+    background-color: #ffffff;
 }
 .column > article{
     box-shadow: 0px 0px 5px 0px black;
     border-radius: 20px;
     text-align: center;
-    transform: transition;
 }
-.column > article:hover {
-    transform: scale(1.2);
-}
+
 .more{
     text-align: center;
     display: grid;
     text-decoration: none;
     border: #000;
 }
+
 /*=Video=*/
 .video{
     display: grid;
@@ -353,9 +388,12 @@ body.dark-bg {
     margin: 55px;
     justify-content: center;
     padding-left: 40px;
+    background-color: #1746A2;
+    border-radius: 10px;
 }
 .video-materi h1 {
     text-align: center;
+    color: #fff;
 }
 .video-materi .slide{
     display: grid;
@@ -365,6 +403,7 @@ body.dark-bg {
     overflow: hidden;
     margin: 18px;
     scroll-behavior: smooth;
+    padding-left: 0;
 }
 .slide.dragging .card{
     cursor: grab;
@@ -425,6 +464,7 @@ body.dark-bg {
     margin-top: 20px;
     margin-left: 65px;
     width: 1100px;
+    background-color: #FFF7E9;
 }
 /*===Materi===*/
 .content {
@@ -473,6 +513,7 @@ p {
     margin: 10px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    background-color: white;
 }
 .bab1 {
     border-radius: 4;
@@ -482,9 +523,10 @@ p {
     margin-bottom: 10px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background-color: #FFF7E9;
 }
 .bab1 h1 {
-    background-color: #f19d00;
+    background-color: #FFF7E9;
     border-radius: 8px;
     padding: 8px;
     margin: 0;
@@ -498,10 +540,11 @@ p {
     margin-bottom: 10px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background-color: #FFF7E9;
 }
 
 .bab2 h1 {
-    background-color: #f19d00;
+    background-color: #FFF7E9;
     border-radius: 8px;
     padding: 8px;
     margin: 0;
@@ -514,6 +557,41 @@ p {
       display: block;
     }
   }
+
+/*==Footer==*/
+footer {
+    background-color: #1746A2;
+    color: #fff;
+    padding: 30px 0;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.company-info {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.company-info h2 {
+    color: #fff;
+}
+
+.company-info p {
+    color: #fff;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin: 0 10px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    transition: color 0.3s ease-in-out;
+}
+
+.social-icons a:hover {
+    color: #3498db;
+}
 
 /*==Materi OPEN==*/
 .isi {
@@ -569,7 +647,7 @@ button:hover {
 /*==OUR TEAM==*/
 .our-team {
     max-width: 800px;
-    margin: 50px auto;
+    margin: 10px auto;
     text-align: center;
 }
 
@@ -583,9 +661,26 @@ h2 {
     gap: 20px;
 }
 
+.ceo {
+    padding: 20px;
+    background-color: #FFF7E9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: auto;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+.ceo img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
 .team-member {
     padding: 20px;
-    background-color: #fff;
+    background-color: #FFF7E9;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
