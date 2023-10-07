@@ -1,19 +1,30 @@
-.body{
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
 }
-/**======index======*/
+
+textarea {
+    resize: none;
+}
+
+/*======index======*/
 .page {
-    width: 100%;
-    height: 100%;
+    width: 1200px;
+    height: 800px;
     position: relative;
+    margin: 0;
 }
 
 .backdrop {
     width: 100%;
     height: 100%;
-    display: block;
+    display: flex;
+    align-items: center;
+    margin: 0;
 }
 
 .button-1 {
@@ -26,9 +37,6 @@
     position: absolute;
     top: 75%;
     left: 10%;
-    text-align: center;
-    text-decoration: none;
-    align-items: center;
 }
 
 .button-1:hover {
@@ -44,9 +52,7 @@
     position: absolute;
     top: 75%;
     left: 20%;
-    text-align: center;
     text-decoration: none;
-    align-items: center;
 }
 
 .button-2:hover {
@@ -63,18 +69,14 @@
       } 
 }
     
-/**===daftar===**/
-body.dark-bg {
-    background-color: #FF731D;
-}
-
+/*==Header==*/
 .header {
     width: 100%;
     background-color: #FF731D;
-    border-radius: 8px;
-    padding: 5px;
-    align-items: center;
     text-align: center;
+    padding: 10px;
+    border-radius: 0 0 8px 8px;
+    width: 100%;
 }
 
 .header-left {
@@ -136,11 +138,11 @@ nav ul li a:hover {
     color: #364f6b;
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 600px) {
     nav {
-        width: 100%;
-        display: grid;
-      } 
+        flex-direction: column;
+        align-items: center;
+    } 
 }
 
 .logo {
@@ -154,6 +156,12 @@ nav ul li a:hover {
     width: 50px;
     background-color: #fff;
     border-radius: 100px;  
+}
+
+/*===Daftar===*/
+/**===daftar===**/
+body.dark-bg {
+    background-color: #FF731D;
 }
 
 .container-register {
@@ -203,7 +211,7 @@ nav ul li a:hover {
 
 /* Pop-up overlay */
 .login-popup {
-    display: flex;
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -214,6 +222,7 @@ nav ul li a:hover {
     justify-content: center;
     z-index: 999;
 }
+
 .login-popup button {
     padding: 10px 20px;
     font-size: 16px;
@@ -240,6 +249,13 @@ nav ul li a:hover {
     top: 10px;
     right: 10px;
     cursor: pointer;
+}
+
+.login-popup-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 /**===login===**/
@@ -289,40 +305,50 @@ body.dark-bg {
 .login-form button:hover {
     background-color: rgb(81, 81, 255);
 }
+
 /*login pop up*/
-.login-popup {
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.popup h1 {
+    font-size: 20px;
+    color: red;
+}
+
+.popup h2 {
+    font-size: 20px;
+    color: green;
+}
+.overlay {
     display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    align-items: center;
-    justify-content: center;
-}
-
-.login-popup-content {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
 }
 
 /**====home====**/
 /*=Materi=*/
 .home {
-    display: grid;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
+    max-width: 1200px;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .row-materi {
@@ -331,7 +357,7 @@ body.dark-bg {
     padding: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     margin-top: 20px;
-    margin-left: 65px;
+    margin-left: 5px;
     width: 1100px;
     background-color: #FFF7E9;
 }
@@ -350,20 +376,23 @@ body.dark-bg {
     display: grid;
     grid-template-columns: repeat(3,1fr);
     align-items: center;
-    grid-gap: 30px;
+    grid-gap: 15px;
+    width: 100%;
     justify-content: center;
     text-align: center;
     background-color: #ffffff;
 }
 .column > article{
     box-shadow: 0px 0px 5px 0px black;
-    border-radius: 20px;
+    border-radius: 10px;
     text-align: center;
+    width: auto;
 }
 
 .more{
     text-align: center;
     display: grid;
+    margin-top: 20px;
     text-decoration: none;
     border: #000;
 }
@@ -433,28 +462,38 @@ body.dark-bg {
 .video-materi i:last-child{
     right: -22px;
 }
+
 @media (max-width: 600px) {
-    .column{
-        grid-template-columns: repeat(2,1fr);
+    .home {
+        width: calc(100% - 40px);
+        margin: 20px 20px 0 20px;
     }
-}
-@media (max-width: 600px) {
+    .row-materi {
+        width: 700px;
+        display: grid;
+    }
+    .soal{
+        width: 700px;
+        display: grid;
+    }
+    .video-materi {
+        width: 700px;
+        display: grid;
+    }
     .column{
         grid-template-columns: repeat(1,1fr);
+        width: auto;
     }
-}
-@media screen and (max-width: 600px) {
-    .video-materi .slide{
-        grid-auto-columns: calc((100%/2) - 9px);
-        gap: 10px;
-    }
-}
-@media screen and (max-width: 600px) {
     .video-materi .slide{
         grid-auto-columns: 100%;
         gap: 5px;
     }
+    .video {
+        width: calc(100% - 40px);
+        margin: 20px 20px 0 20px;
+    }
 }
+
 
 /*=Soal Home=*/
 .soal {
@@ -463,18 +502,29 @@ body.dark-bg {
     padding: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     margin-top: 20px;
-    margin-left: 65px;
+    margin-left: 5px;
     width: 1100px;
     background-color: #FFF7E9;
 }
+ .soal h1 {
+    size: 40px;
+    background-color: #FFF7E9;
+    width: auto;
+    border-radius: 8px;
+    padding: 4px;
+    justify-content: center;
+    text-align: center;
+}
+
 /*===Materi===*/
 .content {
-    max-width: 800px;
-    margin: 0 auto;
-    background-color: #fff;
+    max-width: 1000px;
+    margin: 20px;
+    margin-left: 150px;
+    display: block;
+    background-color: white;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
 }
 
 h1, h2 {
@@ -520,36 +570,34 @@ p {
     border-radius: 4;
     display: block;
     padding: 20px;
-    margin-top: 30px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    background-color: #FFF7E9;
-}
-.bab1 h1 {
-    background-color: #FFF7E9;
-    border-radius: 8px;
-    padding: 8px;
-    margin: 0;
-    width: fit-content;
-}
-.bab2 {
-    border-radius: 4;
-    display: block;
-    padding: 20px;
-    margin-top: 30px;
-    margin-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 40px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     background-color: #FFF7E9;
 }
 
-.bab2 h1 {
+.bab2 {
+    border-radius: 4;
+    display: block;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     background-color: #FFF7E9;
-    border-radius: 8px;
-    padding: 8px;
-    margin: 0;
-    width: fit-content;
+}
+
+
+.bab3 {
+    border-radius: 4;
+    display: block;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background-color: #FFF7E9;
 }
 
 @media screen and (max-width: 650px) {
@@ -563,9 +611,10 @@ p {
 footer {
     background-color: #1746A2;
     color: #fff;
-    padding: 30px 0;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 40px;
+    padding: 10px;
+    bottom: 0;
 }
 
 .company-info {
@@ -596,14 +645,16 @@ footer {
 
 /*==Materi OPEN==*/
 .isi {
-    max-width: 800px;
-    margin: 0 auto;
-    background-color: #fff;
+    max-width: 1000px;
+    margin: 20px;
+    margin-left: 150px;
+    text-align: left;
+    align-items: left;
+    display: block;
+    background-color: white;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
 }
-
 .materi-1 {
     border-radius: 4;
     display: block;
@@ -613,6 +664,9 @@ footer {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     background-color: #FFF7E9;
+}
+.materi-1 p {
+    text-indent: 10px;
 }
 .materi-1 h1 {
     border-bottom: 2px solid #000;
@@ -646,8 +700,9 @@ footer {
     border-bottom: 2px solid #000;
     padding-bottom: 5px;
 }
-h1, h2 {
+h1 {
     color: #333;
+    font-size: 30px;
 }
 
 .materi {
@@ -689,9 +744,16 @@ button:hover {
 
 /*==OUR TEAM==*/
 .our-team {
-    max-width: 800px;
-    margin: 10px auto;
+    max-width: 1000px;
+    margin: 20px;
+    margin-left: 150px;
     text-align: center;
+    align-items: center;
+    display: block;
+    background-color: #FFF7E9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 h2 {
@@ -706,7 +768,7 @@ h2 {
 
 .ceo {
     padding: 20px;
-    background-color: #FFF7E9;
+    background-color: white;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: auto;
@@ -723,7 +785,7 @@ h2 {
 
 .team-member {
     padding: 20px;
-    background-color: #FFF7E9;
+    background-color: white;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -753,4 +815,113 @@ h2 {
 /*==Soal==*/
 .btn1{
     float: left;
+}
+
+ .inputsoal {   
+    margin-bottom: 16px;
+    resize: vertical; 
+    height: auto;
+    margin-left: 0;
+}
+
+.soal-open {
+    border-radius: 8px;
+    display: grid;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-top: 20px;
+    margin-left: 115px;
+    width: 1100px;
+    background-color: #FFF7E9;
+}
+
+.soal-open h1 {
+    text-align: left;
+}
+
+/*==hasil-jawaban==*/
+.isi h1{
+    margin: 0;
+}
+
+.hasil-jawaban {
+    border-radius: 4;
+    display: block;
+    padding: 20px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background-color: #FFF7E9;
+}
+
+.nama {
+    display: flex;
+    flex-direction: column;
+}
+
+.nama h1 {
+    font-size: 25px;
+    margin: 0;
+}
+
+.nama h5 {
+    font-size: 12px;
+    margin: 0;
+    margin-bottom: 10px;
+    color: #1746A2;
+}
+.materi-active {
+    padding: 10px;
+}
+
+.isi p {
+    background-color: white;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow:  0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/*==Carousel==*/
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    border-radius: 20px;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    min-width: 100%;
+}
+
+.carousel img {
+    width: 100%; 
+    height: auto;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
 }

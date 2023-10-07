@@ -11,26 +11,33 @@
 <div class="container-login">
     <div class="login-form">
         <h2>Login</h2>
-        <form id="loginForm" onsubmit="loginUser(event)">
+        <form onsubmit="return checkLogin()">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
 
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
 
-            <button type="submit" onclick="validatelogin()">Login</button>
+            <button type="submit" onclick="validatelogin()">Login
+            <a href="home.html"></a>
+            </button>
         </form>
     </div>
 
-    <div class="login-popup" id="loginPopup">
-        <div class="login-popup-content">
-            <span class="close" onclick="toggleLoginPopup()">&times;</span>
-            <h2>Login Berhasil</h2>
-            <p>Anda berhasil masuk ke akun Anda</p>
-            <a href="home.html">
-                <button type="button">Lanjutkan</button>
-        </div>
+    <div id="successPopup" class="popup">
+        <h2>Login Berhasil</h2>
+        <p>Selamat Datang</p>
+        <a href="home.html">
+        <button onclick="closePopup('successPopup')">Tutup</button></a>
+     </div>
+
+    <div id="errorPopup" class="popup">
+        <h1>Login gagal</h1>
+        <p>Silakan cek kembali username dan password Anda.</p>
+        <button onclick="closePopup('errorPopup')">Tutup</button>
     </div>
+
+    <div class="overlay" onclick="closePopup('successPopup'); closePopup('errorPopup')"></div>
 </div>
 
 <script src="script.js"></script>

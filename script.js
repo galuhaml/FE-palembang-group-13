@@ -10,31 +10,35 @@ function registerUser(event) {
 }
 
 //====Status Login====//
-function openLoginPopup() {
-    document.getElementById('loginPopup').style.display = 'block';
-    document.getElementById('overlay').style.display = 'block';
-  }
+function checkLogin() {
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
 
-  function closeLoginPopup() {
-    document.getElementById('loginPopup').style.display = 'none';
-    document.getElementById('overlay').style.display = 'none';
-    document.getElementById('loginMessage').innerText = ''; // Reset login message
-  }
-
-  function validateLogin() {
-    var username = document.getElementById('username').value;
-    var password = document.getElementById('password').value;
-
-    var validUsername = 'user1';
-    var validPassword = 'pass123';
-
-    if (username === validUsername && password === validPassword) {
-      document.getElementById('loginMessage').innerText = 'Login berhasil!';
-     
+    if (username === "user" && password === "password") {
+        showPopup('successPopup');
+        hidePopup('errorPopup');
     } else {
-      document.getElementById('loginMessage').innerText = 'Login gagal. Periksa kembali username dan password Anda.';
+        hidePopup('successPopup');
+        showPopup('errorPopup');
     }
-  }
+
+    return false;
+}
+
+function showPopup(id) {
+    document.getElementById(id).style.display = "block";
+    document.querySelector('.overlay').style.display = "block";
+}
+
+function hidePopup(id) {
+    document.getElementById(id).style.display = "none";
+    document.querySelector('.overlay').style.display = "none";
+}
+
+function closePopup(id) {
+    hidePopup(id);
+}
+
 //==========home==========//
 //**video**
 const slide = document.querySelector(".slide");
@@ -84,6 +88,27 @@ function showMateri(materiNumber) {
 
     var selectedMateri = document.getElementById('materi' + materiNumber);
     selectedMateri.classList.add('active');
+}
+
+//===Caorosel===//
+let currentIndex = 0;
+const carousel = document.querySelector('.carousel');
+const items = document.querySelectorAll('.carousel-item');
+
+function showSlide(index) {
+    currentIndex = index;
+    const translateValue = -index * 100 + '%';
+    carousel.style.transform = 'translateX(' + translateValue + ')';
+}
+
+function nextSlide() {
+    currentIndex = (currentIndex + 1) % items.length;
+    showSlide(currentIndex);
+}
+
+function prevSlide() {
+    currentIndex = (currentIndex - 1 + items.length) % items.length;
+    showSlide(currentIndex);
 }
 
 //===SOAL OPEN===//
