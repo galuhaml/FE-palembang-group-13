@@ -512,6 +512,16 @@ body.dark-bg {
     justify-content: center;
     text-align: center;
 }
+.soal .column{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    grid-gap: 15px;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    background-color: #ffffff;
+}
 
 /*===Materi===*/
 .content {
