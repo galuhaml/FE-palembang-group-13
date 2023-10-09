@@ -48,7 +48,7 @@
     <div class="row-materi">
       <h1>Materi Pembelajaran</h1>
       <div class="column">
-        <article>
+        <!--<article>
           <div class="card">
             <h2>Materi 1</h2>
             <h4>Cara daftar online shop</h4>
@@ -68,7 +68,7 @@
             <h4>Cara daftar online shop</h4>
             <p>loremipsumroemsipum....</p>
           </div>
-        </article>
+        </article>-->
         </div>
         <div class="more">
           <a href="materi.html">
@@ -76,6 +76,33 @@
           </a>
         </div>
       </div>
+      <script>
+        const ambilData = async() => {
+            const response = await fetch("https://group-13-palembang-production.up.railway.app/home");
+            const home_materi = await response.json();
+            console.log(home_materi);
+
+            const h = "text/html";
+            let parser = new DOMParser();
+
+            home_materi.forEach((home_materi) => {
+                let home_materiStr = `
+                <article>
+                  <div class="card">
+                    <h2>${home_materi.bab}</h2>
+                    <h4>${home_materi.sub_bab}</h4>
+                    <p>${home_materi.deskripsi}</p>
+                  </div>
+                </article>
+                `;
+                let el = parser.parseFromString(home_materiStr, h);
+                let root = document.querySelector("div.column");
+                root.appendChild(el.body.firstChild);
+            });
+        };
+
+        ambilData();
+    </script>
 
       <div class="video-materi">
         <h1>Video Pembelajaran</h1>

@@ -29,7 +29,7 @@
     <div class="isi"> 
         <h1>Jawaban Soal 1:</h1>  
         <div class="hasil-jawaban">
-            
+            <!--
             <div class="nama">
                 <h1>1</h1>
             </div>
@@ -61,10 +61,36 @@
                     <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat vehicula nibh, ac tristique risus lacinia nec. Maecenas dictum felis eget nulla sodales cursus. Aenean odio mi, iaculis vitae ullamcorper quis, viverra vel orci. Proin luctus metus tellus, eu posuere velit hendrerit eget. Vestibulum a magna quis ligula ornare euismod quis id sem. Nullam sagittis rutrum tellus vel sollicitudin. Phasellus dictum placerat mauris, eget faucibus arcu feugiat eget. In non rhoncus odio, ac vehicula lectus. Phasellus molestie nisi quis libero blandit sodales. Nam laoreet purus a mauris elementum, ac facilisis orci scelerisque. Quisque imperdiet sem dolor, ac dictum eros elementum sit amet. Donec malesuada erat eget nunc lobortis condimentum. Cras mollis eget enim quis venenatis.
                     </p>
-                </div>
+                </div>-->
             </div>
             
     </div>  
+    <script>
+        const ambilData = async() => {
+            const response = await fetch("https://group-13-palembang-production.up.railway.app/jawaban-soal-satu");
+            const soal_satu = await response.json();
+            console.log(soal_satu);
+
+            const h = "text/html";
+            let parser = new DOMParser();
+
+            soal_satu.forEach((soal_satu) => {
+                let soal_satuStr = `
+                <div class="nama">
+                <div id="materi1" class="materi-active">
+                    <p>
+                        ${soal_satu.jawaban}
+                    </p>
+                </div>
+                `;
+                let el = parser.parseFromString(soal_satuStr, h);
+                let root = document.querySelector("div.hasil-jawaban");
+                root.appendChild(el.body.firstChild);
+            });
+        };
+
+        ambilData();
+    </script>
 
 <script src="script.js"></script>
 
