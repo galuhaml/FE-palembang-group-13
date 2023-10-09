@@ -4,6 +4,8 @@ body{
     font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     min-height: 100vh;
 }
 
@@ -13,18 +15,13 @@ textarea {
 
 /*======index======*/
 .page {
-    width: 1200px;
-    height: 800px;
-    position: relative;
+    position: fixed;
     margin: 0;
 }
 
 .backdrop {
-    width: 100%;
-    height: 100%;
     display: flex;
     align-items: center;
-    margin: 0;
 }
 
 .button-1 {
@@ -71,7 +68,7 @@ textarea {
     
 /*==Header==*/
 .header {
-    width: 100%;
+
     background-color: #FF731D;
     text-align: center;
     padding: 10px;
@@ -139,7 +136,7 @@ nav ul li a:hover {
 }
 
 @media screen and (max-width: 600px) {
-    nav {
+    nav ul li {
         flex-direction: column;
         align-items: center;
     } 
@@ -477,12 +474,12 @@ body.dark-bg {
         display: grid;
     }
     .video-materi {
-        width: 700px;
+        width: 1000px;
         display: grid;
     }
     .column{
         grid-template-columns: repeat(1,1fr);
-        width: auto;
+        width: 100%;
     }
     .video-materi .slide{
         grid-auto-columns: 100%;
@@ -518,12 +515,12 @@ body.dark-bg {
 
 /*===Materi===*/
 .content {
-    max-width: 1000px;
-    margin: 20px;
-    margin-left: 150px;
+    width: 1000px;
     display: block;
+    margin-top: 40px;
+    align-items: center;
+    justify-content: center;
     background-color: white;
-    padding: 20px;
     border-radius: 10px;
 }
 
@@ -560,12 +557,13 @@ p {
 .section {
     border-radius: 4;
     display: block;
-    padding: 20px;
+    padding: 10px;
     margin: 10px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
     background-color: white;
 }
+
 .bab1 {
     border-radius: 4;
     display: block;
@@ -615,6 +613,7 @@ footer {
     margin-top: 40px;
     padding: 10px;
     bottom: 0;
+    width: 100%;
 }
 
 .company-info {
@@ -646,8 +645,6 @@ footer {
 /*==Materi OPEN==*/
 .isi {
     max-width: 1000px;
-    margin: 20px;
-    margin-left: 150px;
     text-align: left;
     align-items: left;
     display: block;
@@ -745,8 +742,7 @@ button:hover {
 /*==OUR TEAM==*/
 .our-team {
     max-width: 1000px;
-    margin: 20px;
-    margin-left: 150px;
+    margin-top: 40px;
     text-align: center;
     align-items: center;
     display: block;
@@ -817,26 +813,60 @@ h2 {
     float: left;
 }
 
- .inputsoal {   
+.inputsoal {   
     margin-bottom: 16px;
     resize: vertical; 
     height: auto;
     margin-left: 0;
+    width: 900px;
 }
 
+textarea {
+    width: fit-content;
+}
+
+.section-soal {
+    border-radius: 4;
+    display: block;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    background-color: white;
+    width: 950px;
+}
 .soal-open {
     border-radius: 8px;
     display: grid;
-    padding: 15px;
+    padding: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    margin-top: 20px;
-    margin-left: 115px;
-    width: 1100px;
+    margin-top: 40px;
+    width: 1000px;
     background-color: #FFF7E9;
 }
 
 .soal-open h1 {
     text-align: left;
+}
+
+@media screen and (max-width: 650px) {
+    .soal-open {
+        width: calc(100% - 40px);
+        margin: 20px 20px 0 20px;
+        grid-template-columns: repeat(1,1fr);
+        width: 100%;
+        width: 700px;
+        display: grid;
+    }
+    .inputsoal {
+                width: calc(100% - 40px);
+        margin: 20px 20px 0 20px;
+        grid-template-columns: repeat(1,1fr);
+        width: 100%;
+        width: 700px;
+        display: grid;
+    }
+
 }
 
 /*==hasil-jawaban==*/
